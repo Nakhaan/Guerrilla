@@ -1,7 +1,7 @@
 {
   "configVersion": 1,
-  "timestamp": 1686783699412,
-  "index": "/index.html",
+  "timestamp": 1686783868955,
+  "index": "/Guerrilla/index.html",
   "assetGroups": [
     {
       "name": "app",
@@ -11,13 +11,13 @@
         "ignoreVary": true
       },
       "urls": [
-        "/favicon.ico",
-        "/index.html",
-        "/main.14cc0f6b2aa5176a.js",
-        "/manifest.webmanifest",
-        "/polyfills.d3645a6373b3e933.js",
-        "/runtime.75c5676ef593cc4c.js",
-        "/styles.d7434850afe11660.css"
+        "/Guerrilla/favicon.ico",
+        "/Guerrilla/index.html",
+        "/Guerrilla/main.14cc0f6b2aa5176a.js",
+        "/Guerrilla/manifest.webmanifest",
+        "/Guerrilla/polyfills.d3645a6373b3e933.js",
+        "/Guerrilla/runtime.75c5676ef593cc4c.js",
+        "/Guerrilla/styles.d7434850afe11660.css"
       ],
       "patterns": []
     },
@@ -29,35 +29,35 @@
         "ignoreVary": true
       },
       "urls": [
-        "/assets/icons/icon-128x128.png",
-        "/assets/icons/icon-144x144.png",
-        "/assets/icons/icon-152x152.png",
-        "/assets/icons/icon-192x192.png",
-        "/assets/icons/icon-384x384.png",
-        "/assets/icons/icon-512x512.png",
-        "/assets/icons/icon-72x72.png",
-        "/assets/icons/icon-96x96.png"
+        "/Guerrilla/assets/icons/icon-128x128.png",
+        "/Guerrilla/assets/icons/icon-144x144.png",
+        "/Guerrilla/assets/icons/icon-152x152.png",
+        "/Guerrilla/assets/icons/icon-192x192.png",
+        "/Guerrilla/assets/icons/icon-384x384.png",
+        "/Guerrilla/assets/icons/icon-512x512.png",
+        "/Guerrilla/assets/icons/icon-72x72.png",
+        "/Guerrilla/assets/icons/icon-96x96.png"
       ],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
-    "/assets/icons/icon-128x128.png": "b1f06c7d714abb4a0cc4d1f7c954feb26826e4c4",
-    "/assets/icons/icon-144x144.png": "96a0d629765c1bc85d9263c6bc83094ca776d267",
-    "/assets/icons/icon-152x152.png": "b1fbbee3902eb96a7658e3bb006f31f78ca5a44c",
-    "/assets/icons/icon-192x192.png": "e4211163bf0911688fbfb80278d8ff4d2f77691d",
-    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
-    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
-    "/assets/icons/icon-72x72.png": "279825a1ac4377032ae996a1832c641e33ccf1b6",
-    "/assets/icons/icon-96x96.png": "592885efcbfee27e5e20be4fa3043589390d2740",
-    "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/index.html": "18d6b0d57ca2d09d7a4f103bed48ab8e8fb5b334",
-    "/main.14cc0f6b2aa5176a.js": "13aee09294388ddd18905edf0e0e6b29464064e0",
-    "/manifest.webmanifest": "8b8ce624bff64adc1d133b4c106b9dc31cc30189",
-    "/polyfills.d3645a6373b3e933.js": "fbdabe7c32a5b2aef399b0b4a0952d8f37242f13",
-    "/runtime.75c5676ef593cc4c.js": "8e29d9a54929483c840df48937ecccd9d91a0e85",
-    "/styles.d7434850afe11660.css": "0f17cc19c96814589397075dc1080ffb0af09313"
+    "/Guerrilla/assets/icons/icon-128x128.png": "b1f06c7d714abb4a0cc4d1f7c954feb26826e4c4",
+    "/Guerrilla/assets/icons/icon-144x144.png": "96a0d629765c1bc85d9263c6bc83094ca776d267",
+    "/Guerrilla/assets/icons/icon-152x152.png": "b1fbbee3902eb96a7658e3bb006f31f78ca5a44c",
+    "/Guerrilla/assets/icons/icon-192x192.png": "e4211163bf0911688fbfb80278d8ff4d2f77691d",
+    "/Guerrilla/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/Guerrilla/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/Guerrilla/assets/icons/icon-72x72.png": "279825a1ac4377032ae996a1832c641e33ccf1b6",
+    "/Guerrilla/assets/icons/icon-96x96.png": "592885efcbfee27e5e20be4fa3043589390d2740",
+    "/Guerrilla/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/Guerrilla/index.html": "c3e4a8f1f6a429f7fdce15158b1b640a13c0fccb",
+    "/Guerrilla/main.14cc0f6b2aa5176a.js": "13aee09294388ddd18905edf0e0e6b29464064e0",
+    "/Guerrilla/manifest.webmanifest": "8b8ce624bff64adc1d133b4c106b9dc31cc30189",
+    "/Guerrilla/polyfills.d3645a6373b3e933.js": "fbdabe7c32a5b2aef399b0b4a0952d8f37242f13",
+    "/Guerrilla/runtime.75c5676ef593cc4c.js": "8e29d9a54929483c840df48937ecccd9d91a0e85",
+    "/Guerrilla/styles.d7434850afe11660.css": "0f17cc19c96814589397075dc1080ffb0af09313"
   },
   "navigationUrls": [
     {
