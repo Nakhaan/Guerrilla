@@ -1,0 +1,22 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "types": [
+            "node",
+            "jasmine",
+            //
+            // In case you are using WebdriverIO
+            //   "@wdio/globals/types"
+            //
+            // In case you are using Cypress
+            //   "cypress"
+            //
+            // Any other types that are required by your tests
+            //   ...
+        ]
+    },
+    "include": [
+        "src/**/*.ts",
+        "e2e/**/*.ts"
+    ]
+}
