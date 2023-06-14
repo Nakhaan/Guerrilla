@@ -5,7 +5,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { OverviewComponent } from './overview/overview.component';
 
 export const routes: Routes = [
-    { path: '', redirectTo: '/layout', pathMatch: 'full' },
+    // { path: '', redirectTo: '/layout', pathMatch: 'full' },
     {
         path: 'layout',
         component: LayoutComponent,
