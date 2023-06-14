@@ -4,14 +4,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
 import { OverviewComponent } from './overview/overview.component';
 
-export const routes: Routes = [{
-    path: '',
-    component: LayoutComponent,
-    children: [
-        {
-            path: 'overview',
-            component: OverviewComponent
-        }
+export const routes: Routes = [
+    { path: '', redirectTo: '/layout', pathMatch: 'full' },
+    {
+        path: 'layout',
+        component: LayoutComponent,
+        children: [
+            {
+                path: 'overview',
+                component: OverviewComponent
+            }
         // {
         //     path: 'preprod',
         //     component: PreprodComponent
@@ -24,8 +26,10 @@ export const routes: Routes = [{
         //     path: 'account',
         //     component: AccountComponent
         // }
-    ]
-}];
+        ]
+    }
+// { path: '*/*', redirectTo: '/', pathMatch: 'full' }
+];
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
