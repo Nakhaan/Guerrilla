@@ -1,0 +1,47 @@
+mat-card {
+    margin: 1rem;
+    display: flex;
+    flex: 1 1 auto;
+
+    mat-card-content {
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: row;
+        margin-bottom: 1rem;
+
+        .checklist {
+            flex: 1 1 30%;
+            .lists {
+                display: flex;
+                flex-direction: row;
+
+                mat-list-item {
+                    height: fit-content;
+
+                    .item {
+                        display: flex;
+
+                        .icon-display {
+                            display: contents;
+                            font-size: x-large;
+                        }
+
+                        .note {
+                            margin-left: 0.5rem;
+                        }
+                    }
+                }
+            }
+        }
+        .actions {
+            flex: 1 1 70%;
+            display: flex;
+            flex-direction: row-reverse;
+
+            .actions-start {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+        }
+    }
+}
