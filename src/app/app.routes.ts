@@ -20,10 +20,6 @@ export const routes: Routes = [
                 path: 'shotlist',
                 loadComponent: () => import('./preprod/shotlist/shotlist.component').then(x => x.ShotlistComponent)
             }
-        // {
-        //     path: 'account',
-        //     component: AccountComponent
-        // }
         ]
     }
 ];

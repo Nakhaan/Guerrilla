@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, ElementRef, Renderer2 } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
@@ -8,7 +8,10 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { BehaviorSubject, combineLatestWith, map, Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
+
+import { Shot } from './model/shot.model';
+import { ShotlistService } from './shotlist.service';
 
 interface Data {
     col1: string;
@@ -40,35 +43,13 @@ interface Data {
 })
 export class ShotlistComponent {
 
+    protected shotList$: Observable<Shot[]>;
+
     protected keywords = ['Scène', 'Plan', 'Valeur de plan', 'Angle', 'Mouvement', 'Objectif', 'Ouverture', 'Acteurs', 'Description', 'Temps Estim.'];
 
-    protected data = [
-        { col1: 'Scène', col2: 'Plan', col3: 'Valeur de plan', col4: 'Angle', col5: 'Mouvement', col6: 'Temps Estim.' },
-        { col1: 'Scène', col2: 'Plan', col3: 'Valeur de plan', col4: 'Angle', col5: 'Mouvement', col6: 'Temps Estim.' }
-    ];
+    public constructor(private renderer: Renderer2, private el: ElementRef, shotlistService: ShotlistService) {
 
-    protected refreshData$ = new BehaviorSubject<Data | null>(null);
-    protected data$: Observable<Data[]>;
-
-    protected form: FormGroup = new FormGroup({
-        col1: new FormControl(''),
-        col2: new FormControl(''),
-        col3: new FormControl(''),
-        col4: new FormControl(''),
-        col5: new FormControl(''),
-        col6: new FormControl('')
-    });
-
-    public constructor(private renderer: Renderer2, private el: ElementRef) {
-        this.data$ = this.refreshData$.pipe(
-            combineLatestWith(of(this.data)),
-            map(([data, dataList]) => {
-                if (data) {
-                    dataList.push(data);
-                }
-                return dataList;
-            })
-        );
+        this.shotList$ = shotlistService.getShots$();
     }
 
     // eslint-disable-next-line @angular-eslint/use-lifecycle-interface
