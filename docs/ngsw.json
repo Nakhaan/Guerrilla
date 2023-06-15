@@ -1,7 +1,7 @@
 {
   "configVersion": 1,
-  "timestamp": 1686850095597,
-  "index": "/Guerilla/index.html",
+  "timestamp": 1686850275715,
+  "index": "/Guerrilla/index.html",
   "assetGroups": [
     {
       "name": "app",
@@ -11,13 +11,13 @@
         "ignoreVary": true
       },
       "urls": [
-        "/Guerilla/favicon.ico",
-        "/Guerilla/index.html",
-        "/Guerilla/main.99614c5062840580.js",
-        "/Guerilla/manifest.webmanifest",
-        "/Guerilla/polyfills.e70592840d5dac97.js",
-        "/Guerilla/runtime.86fc702326065c79.js",
-        "/Guerilla/styles.d7434850afe11660.css"
+        "/Guerrilla/favicon.ico",
+        "/Guerrilla/index.html",
+        "/Guerrilla/main.99614c5062840580.js",
+        "/Guerrilla/manifest.webmanifest",
+        "/Guerrilla/polyfills.e70592840d5dac97.js",
+        "/Guerrilla/runtime.86fc702326065c79.js",
+        "/Guerrilla/styles.d7434850afe11660.css"
       ],
       "patterns": []
     },
@@ -29,35 +29,35 @@
         "ignoreVary": true
       },
       "urls": [
-        "/Guerilla/assets/icons/icon-128x128.png",
-        "/Guerilla/assets/icons/icon-144x144.png",
-        "/Guerilla/assets/icons/icon-152x152.png",
-        "/Guerilla/assets/icons/icon-192x192.png",
-        "/Guerilla/assets/icons/icon-384x384.png",
-        "/Guerilla/assets/icons/icon-512x512.png",
-        "/Guerilla/assets/icons/icon-72x72.png",
-        "/Guerilla/assets/icons/icon-96x96.png"
+        "/Guerrilla/assets/icons/icon-128x128.png",
+        "/Guerrilla/assets/icons/icon-144x144.png",
+        "/Guerrilla/assets/icons/icon-152x152.png",
+        "/Guerrilla/assets/icons/icon-192x192.png",
+        "/Guerrilla/assets/icons/icon-384x384.png",
+        "/Guerrilla/assets/icons/icon-512x512.png",
+        "/Guerrilla/assets/icons/icon-72x72.png",
+        "/Guerrilla/assets/icons/icon-96x96.png"
       ],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
-    "/Guerilla/assets/icons/icon-128x128.png": "b1f06c7d714abb4a0cc4d1f7c954feb26826e4c4",
-    "/Guerilla/assets/icons/icon-144x144.png": "96a0d629765c1bc85d9263c6bc83094ca776d267",
-    "/Guerilla/assets/icons/icon-152x152.png": "b1fbbee3902eb96a7658e3bb006f31f78ca5a44c",
-    "/Guerilla/assets/icons/icon-192x192.png": "e4211163bf0911688fbfb80278d8ff4d2f77691d",
-    "/Guerilla/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
-    "/Guerilla/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
-    "/Guerilla/assets/icons/icon-72x72.png": "279825a1ac4377032ae996a1832c641e33ccf1b6",
-    "/Guerilla/assets/icons/icon-96x96.png": "592885efcbfee27e5e20be4fa3043589390d2740",
-    "/Guerilla/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/Guerilla/index.html": "54a3ea94ef5676d628638a070235d22727f839e9",
-    "/Guerilla/main.99614c5062840580.js": "0acd6792349ef77b7667a4578b2d2924fea2df91",
-    "/Guerilla/manifest.webmanifest": "8b8ce624bff64adc1d133b4c106b9dc31cc30189",
-    "/Guerilla/polyfills.e70592840d5dac97.js": "a3803ea209291292b8908bd1e9cb44c51d9a6f6a",
-    "/Guerilla/runtime.86fc702326065c79.js": "b9edefe819a16e17000f3d170e520ea27a53b02d",
-    "/Guerilla/styles.d7434850afe11660.css": "0f17cc19c96814589397075dc1080ffb0af09313"
+    "/Guerrilla/assets/icons/icon-128x128.png": "b1f06c7d714abb4a0cc4d1f7c954feb26826e4c4",
+    "/Guerrilla/assets/icons/icon-144x144.png": "96a0d629765c1bc85d9263c6bc83094ca776d267",
+    "/Guerrilla/assets/icons/icon-152x152.png": "b1fbbee3902eb96a7658e3bb006f31f78ca5a44c",
+    "/Guerrilla/assets/icons/icon-192x192.png": "e4211163bf0911688fbfb80278d8ff4d2f77691d",
+    "/Guerrilla/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/Guerrilla/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/Guerrilla/assets/icons/icon-72x72.png": "279825a1ac4377032ae996a1832c641e33ccf1b6",
+    "/Guerrilla/assets/icons/icon-96x96.png": "592885efcbfee27e5e20be4fa3043589390d2740",
+    "/Guerrilla/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/Guerrilla/index.html": "322842d2c11ca1cee2dba84791f7561081f12911",
+    "/Guerrilla/main.99614c5062840580.js": "0acd6792349ef77b7667a4578b2d2924fea2df91",
+    "/Guerrilla/manifest.webmanifest": "8b8ce624bff64adc1d133b4c106b9dc31cc30189",
+    "/Guerrilla/polyfills.e70592840d5dac97.js": "a3803ea209291292b8908bd1e9cb44c51d9a6f6a",
+    "/Guerrilla/runtime.86fc702326065c79.js": "b9edefe819a16e17000f3d170e520ea27a53b02d",
+    "/Guerrilla/styles.d7434850afe11660.css": "0f17cc19c96814589397075dc1080ffb0af09313"
   },
   "navigationUrls": [
     {
