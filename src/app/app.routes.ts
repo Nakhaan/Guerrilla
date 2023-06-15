@@ -5,14 +5,14 @@ import { LayoutComponent } from './layout/layout.component';
 import { OverviewComponent } from './overview/overview.component';
 
 export const routes: Routes = [
-    // { path: '', redirectTo: '/layout', pathMatch: 'full' },
     {
-        path: 'layout',
+        path: '',
         component: LayoutComponent,
         children: [
             {
                 path: 'overview',
-                component: OverviewComponent
+                component: OverviewComponent,
+                loadComponent: () => import('./overview/overview.component').then(x => x.OverviewComponent)
             }
         // {
         //     path: 'preprod',
@@ -28,7 +28,6 @@ export const routes: Routes = [
         // }
         ]
     }
-// { path: '*/*', redirectTo: '/', pathMatch: 'full' }
 ];
 
 @NgModule({
