@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { LayoutComponent } from './layout/layout.component';
-import { OverviewComponent } from './overview/overview.component';
 
 export const routes: Routes = [
     {
@@ -11,17 +10,16 @@ export const routes: Routes = [
         children: [
             {
                 path: 'overview',
-                component: OverviewComponent,
                 loadComponent: () => import('./overview/overview.component').then(x => x.OverviewComponent)
+            },
+            {
+                path: 'preprod',
+                loadComponent: () => import('./preprod/preprod.component').then(x => x.PreprodComponent)
+            },
+            {
+                path: 'shotlist',
+                loadComponent: () => import('./preprod/shotlist/shotlist.component').then(x => x.ShotlistComponent)
             }
-        // {
-        //     path: 'preprod',
-        //     component: PreprodComponent
-        // },
-        // {
-        //     path: 'shotlist',
-        //     component: ShotlistComponent
-        // },
         // {
         //     path: 'account',
         //     component: AccountComponent

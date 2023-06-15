@@ -1,0 +1,207 @@
+.short {
+    display: none;
+}
+
+mat-card {
+    margin: 0.5rem;
+}
+
+.mat-card-wrapper {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+
+    .header {
+        display: inline-flex;
+        height: fit-content;
+        position: sticky;
+        position: -webkit-sticky;
+        top: 0;
+        z-index: 1;
+
+        mat-card-title {
+            align-self: center;
+        }
+
+        .flex-container {
+            display: flex;
+            // justify-content: space-evenly;
+            height: 60%;
+            padding: 0.5rem 0rem;
+
+            .divider-v {
+                border-left: 1px solid black;
+            }
+
+            .flex-scene,
+            .flex-plan {
+                align-self: center;
+                text-align: center;
+                font-size: larger;
+                font-weight: 500;
+                width: 2rem;
+                overflow: auto;
+                flex-grow: 1;
+            }
+            .flex-vplan,
+            .flex-angle,
+            .flex-mouvement {
+                align-self: center;
+                text-align: center;
+                width: 4rem;
+                flex-grow: 1;
+                overflow: auto;
+                font-size: larger;
+                font-weight: 500;
+                overflow-x: auto;
+            }
+            .flex-objectif,
+            .flex-ouverture {
+                align-self: center;
+                text-align: center;
+                width: 2rem;
+                flex-grow: 1;
+                overflow: auto;
+                font-size: larger;
+                font-weight: 500;
+            }
+            .flex-temps {
+                align-self: center;
+                text-align: center;
+                width: 3rem;
+                flex-grow: 1;
+                overflow: auto;
+                font-size: larger;
+                font-weight: 500;
+            }
+            .flex-description {
+                align-self: center;
+                text-align: center;
+                width: 10rem;
+                flex-grow: 1;
+                overflow: auto;
+                font-size: larger;
+                font-weight: 500;
+            }
+            .flex-acteurs {
+                align-self: center;
+                text-align: center;
+                width: 5rem;
+                overflow: auto;
+                flex-grow: 1;
+                font-size: larger;
+                font-weight: 500;
+            }
+            .flex-actions {
+                align-self: center;
+                text-align: center;
+                width: 1px;
+                overflow: auto;
+                flex-grow: 1;
+                font-size: larger;
+                font-weight: 500;
+            }
+        }
+    }
+
+    .content {
+        display: inline-flex;
+        height: fit-content;
+        overflow: auto;
+
+        mat-card-title {
+            align-self: center;
+        }
+
+        .flex-container {
+            display: flex;
+            height: 60%;
+            padding: 0.5rem 0rem;
+
+            .divider-v {
+                border-left: 1px solid black;
+            }
+
+            .flex-scene,
+            .flex-plan {
+                align-self: center;
+                text-align: center;
+                width: 2rem;
+                overflow: auto;
+                flex-grow: 1;
+            }
+            .flex-vplan,
+            .flex-angle,
+            .flex-mouvement {
+                align-self: center;
+                text-align: center;
+                width: 4rem;
+                overflow: auto;
+                flex-grow: 1;
+            }
+            .flex-objectif,
+            .flex-ouverture {
+                align-self: center;
+                text-align: center;
+                width: 2rem;
+                overflow: auto;
+                flex-grow: 1;
+            }
+            .flex-temps {
+                align-self: center;
+                text-align: center;
+                width: 3rem;
+                overflow: auto;
+                flex-grow: 1;
+            }
+            .flex-description {
+                align-self: center;
+                text-align: center;
+                width: 10rem;
+                flex-grow: 1;
+                overflow: auto;
+            }
+            .flex-acteurs {
+                align-self: center;
+                text-align: center;
+                width: 5rem;
+                overflow: auto;
+                flex-grow: 1;
+            }
+            .flex-actions {
+                align-self: center;
+                text-align: center;
+                width: 1px;
+                overflow: auto;
+                flex-grow: 1;
+            }
+        }
+    }
+}
+
+@media (max-width: 1300px) {
+    .mid-screen {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .small-screen,
+    .mid-screen {
+        display: none;
+    }
+
+    .short {
+        display: inline-block;
+    }
+
+    .long {
+        display: none;
+    }
+}
+
+@media (min-width: 900px) {
+    .clickable-div {
+        pointer-events: none;
+    }
+}
