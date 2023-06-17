@@ -15,7 +15,7 @@
             <div class="divider-v"></div>
             <div class="flex-mouvement long">Mouvement</div>
             <div class="flex-mouvement short">Mouv</div>
-            <div class="divider-v"></div>
+            <div class="divider-v mini"></div>
             <div class="flex-objectif small-screen">Focal</div>
             <div class="divider-v small-screen"></div>
             <div class="flex-ouverture small-screen">Ouverture</div>
@@ -24,42 +24,38 @@
             <div class="divider-v mid-screen"></div>
             <div class="flex-description mid-screen">Description</div>
             <div class="divider-v mid-screen"></div>
-            <div class="flex-temps long">Durée</div>
-            <div class="flex-temps short">Durée</div>
-            <div class="divider-v long"></div>
-            <div class="flex-actions long">Actions</div>
+            <div class="flex-temps mini">Durée</div>
         </div>
     </mat-card>
-
     <mat-card *ngIf="shotList$ | async as shotList" class="content">
-        <div matRipple *ngFor="let shot of shotList" (click)="onClick($event)" class="clickable-div">
+        <div matRipple *ngFor="let shot of shotList" class="clickable-div">
             <div class="flex-container">
                 <div class="flex-scene">{{shot.scene}}</div>
                 <div class="divider-v"></div>
-                <div class="flex-plan">100</div>
+                <div class="flex-plan">{{shot.shot}}</div>
                 <div class="divider-v"></div>
-                <div class="flex-vplan">Large</div>
+                <div class="flex-vplan">{{shot.shotSize}}</div>
                 <div class="divider-v"></div>
-                <div class="flex-angle">Dutch drodzdadazzzzzzzzzzzzzzzzzzzzzzzzdaz</div>
+                <div class="flex-angle">{{shot.shotType}}</div>
                 <div class="divider-v"></div>
-                <div class="flex-mouvement">Tracking</div>
-                <div class="divider-v"></div>
-                <div class="flex-objectif small-screen">100mm</div>
+                <div class="flex-mouvement">{{shot.movement}}</div>
+                <div class="divider-v mini"></div>
+                <div class="flex-objectif small-screen">{{shot.lens}}</div>
                 <div class="divider-v small-screen"></div>
-                <div class="flex-ouverture small-screen">f/22.2</div>
+                <div class="flex-ouverture small-screen">{{shot.aperture}}</div>
                 <div class="divider-v small-screen"></div>
-                <div class="flex-acteurs mid-screen">Acteurs</div>
+                <div class="flex-acteurs mid-screen">
+                    N/Addddddddddddddddddddddddddddddddddddddddddd ddddddddddddddddddddddddddddd</div>
                 <div class="divider-v mid-screen"></div>
-                <div class="flex-description mid-screen">Description</div>
+                <div class="flex-description mid-screen">{{shot.description}}</div>
                 <div class="divider-v mid-screen"></div>
-                <div class="flex-temps">123min</div>
-                <div class="divider-v long"></div>
-                <div class="flex-actions long"><button mat-icon-button
-                        class="always-clickable-button"><mat-icon>delete</mat-icon></button></div>
+                <div class="flex-temps mini">{{shot.estTime}}</div>
             </div>
             <mat-divider></mat-divider>
         </div>
     </mat-card>
+    <button mat-fab color="primary"><mat-icon>add</mat-icon></button>
+
     <!-- <div>
         <mat-card>
             <form [formGroup]="form" class="form">

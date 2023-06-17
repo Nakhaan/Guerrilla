@@ -8,7 +8,7 @@ export interface Shot {
     movement?: string;
     estTime?: string;
     lens?: string;
-    qperture?: string;
+    aperture?: string;
     sceneId?: string;
     shotId?: string;
 

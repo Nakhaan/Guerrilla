@@ -2,178 +2,84 @@
     display: none;
 }
 
-mat-card {
-    margin: 0.5rem;
-}
-
 .mat-card-wrapper {
-    width: 100%;
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 
     .header {
-        display: inline-flex;
-        height: fit-content;
-        position: sticky;
-        position: -webkit-sticky;
-        top: 0;
-        z-index: 1;
-
-        mat-card-title {
-            align-self: center;
-        }
-
-        .flex-container {
-            display: flex;
-            // justify-content: space-evenly;
-            height: 60%;
-            padding: 0.5rem 0rem;
-
-            .divider-v {
-                border-left: 1px solid black;
-            }
-
-            .flex-scene,
-            .flex-plan {
-                align-self: center;
-                text-align: center;
-                font-size: larger;
-                font-weight: 500;
-                width: 2rem;
-                overflow: auto;
-                flex-grow: 1;
-            }
-            .flex-vplan,
-            .flex-angle,
-            .flex-mouvement {
-                align-self: center;
-                text-align: center;
-                width: 4rem;
-                flex-grow: 1;
-                overflow: auto;
-                font-size: larger;
-                font-weight: 500;
-                overflow-x: auto;
-            }
-            .flex-objectif,
-            .flex-ouverture {
-                align-self: center;
-                text-align: center;
-                width: 2rem;
-                flex-grow: 1;
-                overflow: auto;
-                font-size: larger;
-                font-weight: 500;
-            }
-            .flex-temps {
-                align-self: center;
-                text-align: center;
-                width: 3rem;
-                flex-grow: 1;
-                overflow: auto;
-                font-size: larger;
-                font-weight: 500;
-            }
-            .flex-description {
-                align-self: center;
-                text-align: center;
-                width: 10rem;
-                flex-grow: 1;
-                overflow: auto;
-                font-size: larger;
-                font-weight: 500;
-            }
-            .flex-acteurs {
-                align-self: center;
-                text-align: center;
-                width: 5rem;
-                overflow: auto;
-                flex-grow: 1;
-                font-size: larger;
-                font-weight: 500;
-            }
-            .flex-actions {
-                align-self: center;
-                text-align: center;
-                width: 1px;
-                overflow: auto;
-                flex-grow: 1;
-                font-size: larger;
-                font-weight: 500;
-            }
-        }
+        font-weight: 500;
+        font-size: larger;
     }
 
     .content {
-        display: inline-flex;
-        height: fit-content;
-        overflow: auto;
+        word-wrap: break-word;
+    }
+
+    .header,
+    .content {
+        margin: 0.5rem;
+        padding-bottom: 0.5rem;
+        width: calc(100% - 1rem);
+        display: flex;
 
         mat-card-title {
             align-self: center;
+            font-size: x-large;
+            font-weight: 500;
+            margin: 1rem;
         }
 
         .flex-container {
             display: flex;
-            height: 60%;
-            padding: 0.5rem 0rem;
+            align-content: center;
 
             .divider-v {
                 border-left: 1px solid black;
             }
 
             .flex-scene,
-            .flex-plan {
+            .flex-plan,
+            .flex-vplan,
+            .flex-angle,
+            .flex-mouvement,
+            .flex-objectif,
+            .flex-ouverture,
+            .flex-temps,
+            .flex-description,
+            .flex-acteurs,
+            .flex-actions {
                 align-self: center;
                 text-align: center;
-                width: 2rem;
-                overflow: auto;
                 flex-grow: 1;
+                margin: 0.5rem;
+            }
+            .flex-scene,
+            .flex-plan {
+                width: 2rem;
             }
             .flex-vplan,
             .flex-angle,
             .flex-mouvement {
-                align-self: center;
-                text-align: center;
                 width: 4rem;
-                overflow: auto;
-                flex-grow: 1;
             }
             .flex-objectif,
             .flex-ouverture {
-                align-self: center;
-                text-align: center;
                 width: 2rem;
-                overflow: auto;
-                flex-grow: 1;
             }
             .flex-temps {
-                align-self: center;
-                text-align: center;
                 width: 3rem;
-                overflow: auto;
-                flex-grow: 1;
             }
             .flex-description {
-                align-self: center;
-                text-align: center;
                 width: 10rem;
-                flex-grow: 1;
-                overflow: auto;
             }
             .flex-acteurs {
-                align-self: center;
-                text-align: center;
                 width: 5rem;
-                overflow: auto;
-                flex-grow: 1;
             }
             .flex-actions {
-                align-self: center;
-                text-align: center;
                 width: 1px;
-                overflow: auto;
-                flex-grow: 1;
             }
         }
     }
@@ -203,5 +109,11 @@ mat-card {
 @media (min-width: 900px) {
     .clickable-div {
         pointer-events: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .mini {
+        display: none;
     }
 }
