@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, ElementRef, Renderer2 } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -11,6 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { Observable } from 'rxjs';
 
 import { Shot } from './model/shot.model';
+import { ShotDialogComponent } from './shot-dialog/shot-dialog.component';
 import { ShotlistService } from './shotlist.service';
 
 @Component({
@@ -26,7 +28,8 @@ import { ShotlistService } from './shotlist.service';
         ReactiveFormsModule,
         MatFormFieldModule,
         MatInputModule,
-        MatRippleModule
+        MatRippleModule,
+        MatDialogModule
     ],
     templateUrl: './shotlist.component.html',
     styleUrls: ['./shotlist.component.scss'],
@@ -38,17 +41,21 @@ export class ShotlistComponent {
 
     protected keywords = ['Scène', 'Plan', 'Valeur de plan', 'Angle', 'Mouvement', 'Objectif', 'Ouverture', 'Acteurs', 'Description', 'Temps Estim.'];
 
-    public constructor(private renderer: Renderer2, private el: ElementRef, shotlistService: ShotlistService) {
+    public constructor(private dialog: MatDialog,
+        shotlistService: ShotlistService) {
 
         this.shotList$ = shotlistService.getShots$();
     }
 
-    // onClick(event: Event): void {
-    //     if (window.innerWidth < 600 && !(event.target instanceof HTMLButtonElement)) {
-    //     // Faites ce que vous voulez faire ici
-    //         alert('La div a été cliquée!');
-    //     }
-    // }
+    protected openDialog(): void {
+        this.dialog.open(ShotDialogComponent, {
+            data: null
+        });
+    }
 
-
+    protected openInfo(shot: Shot): void {
+        this.dialog.open(ShotDialogComponent, {
+            data: shot
+        });
+    }
 }

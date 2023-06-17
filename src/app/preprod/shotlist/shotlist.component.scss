@@ -106,12 +106,6 @@
     }
 }
 
-@media (min-width: 900px) {
-    .clickable-div {
-        pointer-events: none;
-    }
-}
-
 @media (max-width: 400px) {
     .mini {
         display: none;

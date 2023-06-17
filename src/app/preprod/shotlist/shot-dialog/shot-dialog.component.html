@@ -1,1 +1,46 @@
-<p>shot-dialog works!</p>
+<mat-card>
+    <div>
+        <h1 mat-dialog-title>Shot Info</h1>
+        <span>Scène</span>
+        <span>{{data.scene}}</span>
+        <span>Plan</span>
+        <span>{{data.shot}}</span>
+    </div>
+    <div mat-dialog-content>
+        <mat-list>
+            <mat-list-item>
+                <span matListItemTitle>Valeur</span>
+                <span matListItemLine>{{data.shotSize}}</span>
+            </mat-list-item>
+            <mat-list-item>
+                <span matListItemTitle>Angle</span>
+                <span matListItemLine>{{data.shotType}}</span>
+            </mat-list-item>
+            <mat-list-item>
+                <span matListItemTitle>Mouvement</span>
+                <span matListItemLine>{{data.movement}}</span>
+            </mat-list-item>
+            <mat-list-item>
+                <span matListItemTitle>Focal</span>
+                <span matListItemLine>{{data.lens}}</span>
+            </mat-list-item>
+            <mat-list-item>
+                <span matListItemTitle>Ouverture</span>
+                <span matListItemLine>{{data.aperture}}</span>
+            </mat-list-item>
+            <mat-list-item>
+                <span matListItemTitle>Durée</span>
+                <span matListItemLine>{{data.estTime}}</span>
+            </mat-list-item>
+        </mat-list>
+
+        <!-- <mat-form-field formGroup="">
+        <mat-label>Shot</mat-label>
+        <input matInput [(ngModel)]="data.shot">
+    </mat-form-field> -->
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="onNoClick()">No Thanks</button>
+        <!-- <button mat-button [mat-dialog-close]="data.shot" cdkFocusInitial>Ok</button> -->
+    </div>
+</mat-card>
