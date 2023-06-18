@@ -1,3 +1,4 @@
+import { CdkDragDrop, DragDropModule, moveItemInArray } from '@angular/cdk/drag-drop';
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -9,7 +10,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { Observable } from 'rxjs';
+import { map, Observable, Subject } from 'rxjs';
 
 import { Shot } from './model/shot.model';
 import { ShotDialogComponent } from './shot-dialog/shot-dialog.component';
@@ -29,7 +30,8 @@ import { ShotlistService } from './shotlist.service';
         MatFormFieldModule,
         MatInputModule,
         MatRippleModule,
-        MatDialogModule
+        MatDialogModule,
+        DragDropModule
     ],
     templateUrl: './shotlist.component.html',
     styleUrls: ['./shotlist.component.scss'],
@@ -38,13 +40,17 @@ import { ShotlistService } from './shotlist.service';
 export class ShotlistComponent {
 
     protected shotList$: Observable<Shot[]>;
+    protected refreshShotList$ = new Subject<void>;
+    protected isEditable = false;
 
     protected keywords = ['Scène', 'Plan', 'Valeur de plan', 'Angle', 'Mouvement', 'Objectif', 'Ouverture', 'Acteurs', 'Description', 'Temps Estim.'];
 
     public constructor(private dialog: MatDialog,
-        shotlistService: ShotlistService) {
+        private shotlistService: ShotlistService) {
 
-        this.shotList$ = shotlistService.getShots$();
+        this.shotList$ = shotlistService.getShots$().pipe(
+            map(shotList => shotList.sort((shota, shotb) => shota.arrayIndex - shotb.arrayIndex))
+        );
     }
 
     protected openDialog(): void {
@@ -57,5 +63,11 @@ export class ShotlistComponent {
         this.dialog.open(ShotDialogComponent, {
             data: shot
         });
+    }
+
+    protected drop(event: CdkDragDrop<Shot[]>, shotList: Shot[]): void {
+        moveItemInArray(shotList, event.previousIndex, event.currentIndex);
+        this.shotlistService.saveShotList$(shotList).subscribe();
+
     }
 }

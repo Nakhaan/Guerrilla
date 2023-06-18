@@ -16,4 +16,8 @@ export class ShotlistService {
     public getShots$(): Observable<Shot[]> {
         return this.http.get<Shot[]>(`${this.apiUrl}/shots`);
     }
+
+    public saveShotList$(shotList: Shot[]): Observable<Shot[]> {
+        return this.http.post<Shot[]>(`${this.apiUrl}/shots/save/list`, shotList);
+    }
 }

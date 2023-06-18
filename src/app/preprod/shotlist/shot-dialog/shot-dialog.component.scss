@@ -1,4 +1,31 @@
-mat-card {
+.main-container {
     width: 80vw;
-    // height: 70vh;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+        align-self: center;
+    }
+
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        column-gap: 2rem;
+
+        .scene,
+        .plan {
+            align-self: center;
+
+            .title-data {
+                color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54));
+            }
+            .data {
+                font-size: larger;
+                font-weight: 500;
+            }
+        }
+    }
 }

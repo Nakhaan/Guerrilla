@@ -1,46 +1,90 @@
-<mat-card>
-    <div>
-        <h1 mat-dialog-title>Shot Info</h1>
-        <span>Scène</span>
-        <span>{{data.scene}}</span>
-        <span>Plan</span>
-        <span>{{data.shot}}</span>
+<div class="main-container">
+    <h1 mat-dialog-title>Shot Info</h1>
+    <div class="header">
+        <div class="scene">
+            <span class="title-data">Scène: </span>
+            <span class="data">{{data.scene}}</span>
+        </div>
+        <div class="plan">
+            <span class="title-data">Plan: </span>
+            <span class="data">{{data.shot}}</span>
+        </div>
     </div>
-    <div mat-dialog-content>
-        <mat-list>
-            <mat-list-item>
-                <span matListItemTitle>Valeur</span>
-                <span matListItemLine>{{data.shotSize}}</span>
-            </mat-list-item>
-            <mat-list-item>
-                <span matListItemTitle>Angle</span>
-                <span matListItemLine>{{data.shotType}}</span>
-            </mat-list-item>
-            <mat-list-item>
-                <span matListItemTitle>Mouvement</span>
-                <span matListItemLine>{{data.movement}}</span>
-            </mat-list-item>
-            <mat-list-item>
-                <span matListItemTitle>Focal</span>
-                <span matListItemLine>{{data.lens}}</span>
-            </mat-list-item>
-            <mat-list-item>
-                <span matListItemTitle>Ouverture</span>
-                <span matListItemLine>{{data.aperture}}</span>
-            </mat-list-item>
-            <mat-list-item>
-                <span matListItemTitle>Durée</span>
-                <span matListItemLine>{{data.estTime}}</span>
-            </mat-list-item>
-        </mat-list>
-
-        <!-- <mat-form-field formGroup="">
-        <mat-label>Shot</mat-label>
-        <input matInput [(ngModel)]="data.shot">
-    </mat-form-field> -->
-    </div>
-    <div mat-dialog-actions>
-        <button mat-button (click)="onNoClick()">No Thanks</button>
-        <!-- <button mat-button [mat-dialog-close]="data.shot" cdkFocusInitial>Ok</button> -->
-    </div>
-</mat-card>
+    <form [formGroup]="shotInputsForm" (ngSubmit)="onSubmit()">
+        <div mat-dialog-content>
+            <div *ngIf="isEditable; else staticView">
+                <mat-list>
+                    <mat-list-item>
+                        <span matListItemTitle>Valeur</span>
+                        <mat-form-field appearance="outline" appearance="outline">
+                            <input matInput matListItemLine matInput formControlName="shotSize">
+                        </mat-form-field>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <span matListItemTitle>Angle</span>
+                        <mat-form-field appearance="outline">
+                            <input matInput matListItemLine formControlName="shotType">
+                        </mat-form-field>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <span matListItemTitle>Mouvement</span>
+                        <mat-form-field appearance="outline">
+                            <input matInput matListItemLine formControlName="movement">
+                        </mat-form-field>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <span matListItemTitle>Focal</span>
+                        <mat-form-field appearance="outline">
+                            <input matInput matListItemLine formControlName="lens">
+                        </mat-form-field>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <span matListItemTitle>Ouverture</span>
+                        <mat-form-field appearance="outline">
+                            <input matInput matListItemLine formControlName="aperture">
+                        </mat-form-field>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <span matListItemTitle>Durée</span>
+                        <mat-form-field appearance="outline">
+                            <input matInput matListItemLine formControlName="estTime">
+                        </mat-form-field>
+                    </mat-list-item>
+                </mat-list>
+            </div>
+        </div>
+        <div mat-dialog-actions>
+            <button mat-raised-button color="primary" (click)="onEdit()">Edit</button>
+            <span>{{isEditable}}</span>
+            <button mat-raised-button color="primary">Save</button>
+        </div>
+        <ng-template #staticView>
+            <mat-list>
+                <mat-list-item>
+                    <span matListItemTitle>Valeur</span>
+                    <span matListItemLine>{{data.shotSize}}</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>Angle</span>
+                    <span matListItemLine>{{data.shotType}}</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>Mouvement</span>
+                    <span matListItemLine>{{data.movement}}</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>Focal</span>
+                    <span matListItemLine>{{data.lens}}</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>Ouverture</span>
+                    <span matListItemLine>{{data.aperture}}</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>Durée</span>
+                    <span matListItemLine>{{data.estTime}}</span>
+                </mat-list-item>
+            </mat-list>
+        </ng-template>
+    </form>
+</div>

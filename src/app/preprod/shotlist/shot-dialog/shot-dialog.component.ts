@@ -1,12 +1,19 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
-import { FormControl, FormGroup, FormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 
 import { Shot } from '../model/shot.model';
+
+interface ShotEdit {
+    data: Shot;
+    isEditable: boolean;
+    onEdit: () => void;
+}
 
 @Component({
     selector: 'app-shot-dialog',
@@ -16,7 +23,9 @@ import { Shot } from '../model/shot.model';
         FormsModule,
         MatInputModule,
         MatListModule,
-        MatCardModule
+        MatCardModule,
+        MatButtonModule,
+        ReactiveFormsModule
     ],
     templateUrl: './shot-dialog.component.html',
     styleUrls: ['./shot-dialog.component.scss'],
@@ -24,7 +33,9 @@ import { Shot } from '../model/shot.model';
 })
 export class ShotDialogComponent {
 
-    protected shotInputs = new FormGroup({
+    protected isEditable = false;
+
+    protected shotInputsForm = new FormGroup({
         scene: new FormControl<string | undefined>(this.data.scene),
         shot: new FormControl<string | undefined>(this.data.shot),
         description: new FormControl<string | undefined>(this.data.description),
@@ -41,8 +52,18 @@ export class ShotDialogComponent {
         @Inject(MAT_DIALOG_DATA) public data: Shot
     ) {}
 
-    onNoClick(): void {
+    protected onNoClick(): void {
         this.dialogRef.close();
+    }
+
+    protected onSubmit(): void {
+        // if (this.shotInputsForm.valid) {
+        //     this.isEditable = false;
+        // }
+    }
+
+    protected onEdit(): void {
+        this.isEditable = !this.isEditable;
     }
 
 }
