@@ -4,6 +4,7 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angul
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { takeUntil } from 'rxjs';
@@ -35,7 +36,8 @@ interface ShotForm {
         MatListModule,
         MatCardModule,
         MatButtonModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatFormFieldModule
     ],
     templateUrl: './shot-dialog.component.html',
     styleUrls: ['./shot-dialog.component.scss'],

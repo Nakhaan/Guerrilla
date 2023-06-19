@@ -21,18 +21,23 @@
             align-self: center;
 
             .title-data {
+                font-size: larger;
                 color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54));
             }
             .data {
-                font-size: larger;
+                font-size: x-large;
                 font-weight: 500;
             }
         }
     }
 
-    form {
-        mat-list-item {
-            height: auto;
+    .content {
+        font-size: larger;
+
+        form {
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
         }
     }
 }

@@ -11,35 +11,41 @@
         </div>
     </div>
 
-    <div mat-dialog-content>
+    <div mat-dialog-content class="content">
         <div *ngIf="isEditable; else staticView">
             <form [formGroup]="shotInputsForm">
-                <mat-list>
-                    <mat-list-item>
-                        <span matListItemTitle>Valeur</span>
-                        <input matListItemLine formControlName="shotSize">
-                    </mat-list-item>
-                    <mat-list-item>
-                        <span matListItemTitle>Angle</span>
-                        <input matListItemLine formControlName="shotType">
-                    </mat-list-item>
-                    <mat-list-item>
-                        <span matListItemTitle>Mouvement</span>
-                        <input matListItemLine formControlName="movement">
-                    </mat-list-item>
-                    <mat-list-item>
-                        <span matListItemTitle>Focal</span>
-                        <input matListItemLine formControlName="lens">
-                    </mat-list-item>
-                    <mat-list-item>
-                        <span matListItemTitle>Ouverture</span>
-                        <input matListItemLine formControlName="aperture">
-                    </mat-list-item>
-                    <mat-list-item>
-                        <span matListItemTitle>Durée</span>
-                        <input matListItemLine formControlName="estTime">
-                    </mat-list-item>
-                </mat-list>
+                <mat-form-field appearance="outline">
+                    <mat-label>Scène</mat-label>
+                    <input matInput formControlName="scene">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Plan</mat-label>
+                    <input matInput formControlName="shot">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Valeur</mat-label>
+                    <input matInput formControlName="shotSize">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Angle</mat-label>
+                    <input matInput formControlName="shotType">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Mouvement</mat-label>
+                    <input matInput formControlName="movement">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Focal</mat-label>
+                    <input matInput formControlName="lens">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Ouverture</mat-label>
+                    <input matInput formControlName="aperture">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Durée</mat-label>
+                    <input matInput formControlName="estTime">
+                </mat-form-field>
             </form>
         </div>
     </div>
