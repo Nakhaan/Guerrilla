@@ -27,7 +27,7 @@
             <div class="flex-temps mini">Durée</div>
         </div>
     </mat-card>
-    <mat-card cdkDropList *ngIf="shotList$ | async as shotList" class="content"
+    <mat-card cdkDropList *ngIf="shotlistService.shotList$ | async as shotList" class="content"
         (cdkDropListDropped)="drop($event, shotList)">
         <div matRipple *ngFor="let shot of shotList" class="clickable-div" (click)="openInfo(shot)" cdkDrag>
             <div class="flex-container">

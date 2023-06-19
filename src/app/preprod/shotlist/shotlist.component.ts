@@ -10,7 +10,9 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { map, Observable, Subject } from 'rxjs';
+import { takeUntil } from 'rxjs';
+
+import { Destroy } from 'src/app/commons/destroy';
 
 import { Shot } from './model/shot.model';
 import { ShotDialogComponent } from './shot-dialog/shot-dialog.component';
@@ -37,20 +39,15 @@ import { ShotlistService } from './shotlist.service';
     styleUrls: ['./shotlist.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ShotlistComponent {
+export class ShotlistComponent extends Destroy {
 
-    protected shotList$: Observable<Shot[]>;
-    protected refreshShotList$ = new Subject<void>;
     protected isEditable = false;
 
     protected keywords = ['Scène', 'Plan', 'Valeur de plan', 'Angle', 'Mouvement', 'Objectif', 'Ouverture', 'Acteurs', 'Description', 'Temps Estim.'];
 
     public constructor(private dialog: MatDialog,
-        private shotlistService: ShotlistService) {
-
-        this.shotList$ = shotlistService.getShots$().pipe(
-            map(shotList => shotList.sort((shota, shotb) => shota.arrayIndex - shotb.arrayIndex))
-        );
+        public shotlistService: ShotlistService) {
+        super();
     }
 
     protected openDialog(): void {
@@ -67,7 +64,9 @@ export class ShotlistComponent {
 
     protected drop(event: CdkDragDrop<Shot[]>, shotList: Shot[]): void {
         moveItemInArray(shotList, event.previousIndex, event.currentIndex);
-        this.shotlistService.saveShotList$(shotList).subscribe();
+        this.shotlistService.saveShotList$(shotList).pipe(
+            takeUntil(this.destroyed$)
+        ).subscribe();
 
     }
 }
