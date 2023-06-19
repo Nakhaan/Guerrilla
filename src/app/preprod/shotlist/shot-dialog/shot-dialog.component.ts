@@ -45,18 +45,18 @@ interface ShotForm {
 })
 export class ShotDialogComponent extends Destroy {
 
-    protected isEditable = false;
+    protected isEditable = this.shotlistService.isShotEditable;
 
     protected shotInputsForm = new FormGroup<ShotForm>({
-        scene: new FormControl<string | undefined>(this.data.scene),
-        shot: new FormControl<string | undefined>(this.data.shot),
-        description: new FormControl<string | undefined>(this.data.description),
-        shotSize: new FormControl<string | undefined>(this.data.shotSize),
-        shotType: new FormControl<string | undefined>(this.data.shotType),
-        movement: new FormControl<string | undefined>(this.data.movement),
-        estTime: new FormControl<string | undefined>(this.data.estTime),
-        lens: new FormControl<string | undefined>(this.data.lens),
-        aperture: new FormControl<string | undefined>(this.data.aperture)
+        scene: new FormControl<string | undefined>(this.data.scene || ''),
+        shot: new FormControl<string | undefined>(this.data.shot || ''),
+        description: new FormControl<string | undefined>(this.data.description || ''),
+        shotSize: new FormControl<string | undefined>(this.data.shotSize || ''),
+        shotType: new FormControl<string | undefined>(this.data.shotType || ''),
+        movement: new FormControl<string | undefined>(this.data.movement || ''),
+        estTime: new FormControl<string | undefined>(this.data.estTime || ''),
+        lens: new FormControl<string | undefined>(this.data.lens || ''),
+        aperture: new FormControl<string | undefined>(this.data.aperture || '')
     });
 
     public constructor(
@@ -92,12 +92,10 @@ export class ShotDialogComponent extends Destroy {
         this.shotlistService.updatepdateShot$(shot).pipe(
             takeUntil(this.destroyed$)
         ).subscribe(() => {
-            this.data = shot;
-            this.ref.markForCheck();
-            return this.shotlistService.shotListRefresh$.next();
+            this.isEditable = !this.isEditable;
+            this.shotlistService.shotListRefresh$.next();
+            this.dialogRef.close();
         });
-        this.isEditable = !this.isEditable;
-
     }
 
 }

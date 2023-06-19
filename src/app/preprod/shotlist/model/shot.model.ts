@@ -1,5 +1,5 @@
 export interface Shot {
-    id: number;
+    id?: number;
     arrayIndex: number;
     scene?: string;
     shot?: string;

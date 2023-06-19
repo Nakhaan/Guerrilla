@@ -9,6 +9,9 @@ import { Shot } from './model/shot.model';
 })
 export class ShotlistService {
 
+    public shotListLength = 0;
+    public isShotEditable = false;
+
     public shotList$: Observable<Shot[]>;
     public shotListRefresh$ = new BehaviorSubject<void>(undefined as void);
 
@@ -18,7 +21,10 @@ export class ShotlistService {
 
         this.shotList$ = this.shotListRefresh$.pipe(
             switchMap(() => this.getShots$().pipe(
-                map(shotList => shotList.sort((shota, shotb) => shota.arrayIndex - shotb.arrayIndex))
+                map(shotList => {
+                    this.shotListLength = shotList.length;
+                    return shotList.sort((shota, shotb) => shota.arrayIndex - shotb.arrayIndex);
+                })
             ))
         );
         this.shotListRefresh$.next();

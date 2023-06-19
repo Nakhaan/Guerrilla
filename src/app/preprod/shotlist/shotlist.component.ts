@@ -51,12 +51,28 @@ export class ShotlistComponent extends Destroy {
     }
 
     protected openDialog(): void {
+        this.shotlistService.isShotEditable = true;
+        const shot: Shot = {
+            arrayIndex: this.shotlistService.shotListLength,
+            scene: '',
+            shot: '',
+            description: '',
+            shotSize: '',
+            shotType: '',
+            movement: '',
+            estTime: '',
+            lens: '',
+            aperture: '',
+            sceneId: '',
+            shotId: ''
+        };
         this.dialog.open(ShotDialogComponent, {
-            data: null
+            data: shot
         });
     }
 
     protected openInfo(shot: Shot): void {
+        this.shotlistService.isShotEditable = false;
         this.dialog.open(ShotDialogComponent, {
             data: shot
         });

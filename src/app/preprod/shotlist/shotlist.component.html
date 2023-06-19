@@ -26,10 +26,12 @@
             <div class="divider-v mid-screen"></div>
             <div class="flex-temps mini">Durée</div>
         </div>
+
     </mat-card>
     <mat-card cdkDropList *ngIf="shotlistService.shotList$ | async as shotList" class="content"
         (cdkDropListDropped)="drop($event, shotList)">
-        <div matRipple *ngFor="let shot of shotList" class="clickable-div" (click)="openInfo(shot)" cdkDrag>
+        <div matRipple *ngFor="let shot of shotList" class="clickable-div" (click)="openInfo(shot)" cdkDrag
+            [cdkDragStartDelay]="300">
             <div class="flex-container">
                 <div class="flex-scene">{{shot.scene}}</div>
                 <div class="divider-v"></div>
@@ -57,14 +59,4 @@
     </mat-card>
     <button mat-fab color="primary" (click)="openDialog()"><mat-icon>add</mat-icon></button>
 
-    <!-- <div>
-        <mat-card>
-            <form [formGroup]="form" class="form">
-                <mat-form-field class="form-field" *ngFor="let control of form.controls | keyvalue">
-                    <input matInput [formControlName]="control.key" placeholder="Colonne {{ control.key }}">
-                </mat-form-field>
-                <button mat-raised-button color="primary">Ajouter</button>
-            </form>
-        </mat-card>
-    </div> -->
 </div>
