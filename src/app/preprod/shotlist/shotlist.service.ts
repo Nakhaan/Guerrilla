@@ -15,7 +15,7 @@ export class ShotlistService {
     public shotList$: Observable<Shot[]>;
     public shotListRefresh$ = new BehaviorSubject<void>(undefined as void);
 
-    private apiUrl = 'http://192.168.1.99:8080';
+    private apiUrl = 'http://192.168.138.33:4200/api';
 
     public constructor(private http: HttpClient) {
 

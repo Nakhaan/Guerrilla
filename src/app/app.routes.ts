@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 
+import { LoginComponent } from './authentification/login/login.component';
 import { LayoutComponent } from './layout/layout.component';
 
 export const routes: Routes = [
@@ -20,6 +21,10 @@ export const routes: Routes = [
                 loadComponent: () => import('./preprod/shotlist/shotlist.component').then(x => x.ShotlistComponent)
             }
         ]
+    },
+    {
+        path: 'login',
+        component: LoginComponent
     }
 ];
 
