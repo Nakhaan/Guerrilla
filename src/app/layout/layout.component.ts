@@ -6,6 +6,10 @@ import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
+import { takeUntil } from 'rxjs';
+
+import { AuthentificationService } from '../authentification/authentification.service';
+import { Destroy } from '../commons/destroy';
 
 @Component({
     selector: 'app-layout',
@@ -23,6 +27,18 @@ import { RouterModule } from '@angular/router';
     styleUrls: ['./layout.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LayoutComponent {
+export class LayoutComponent extends Destroy {
+
+    public constructor(
+        private authentificationService: AuthentificationService
+    ) {
+        super();
+    }
+
+    protected logout(): void {
+        this.authentificationService.logout$().pipe(
+            takeUntil(this.destroyed$)
+        ).subscribe();
+    }
 
 }

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { catchError, EMPTY, map, Observable, of, tap } from 'rxjs';
 
 interface Token {
@@ -32,7 +33,10 @@ export class AuthentificationService {
 
     private authEndPoint = 'http://192.168.138.33:4200/api/auth';
 
-    public constructor(private http: HttpClient) {
+    public constructor(
+        private http: HttpClient,
+        private router: Router
+    ) {
     }
 
     public login$(username: string, password: string): Observable<Token> {
@@ -47,7 +51,6 @@ export class AuthentificationService {
                 if (token) {
                     this.setUserSession(JSON.stringify(token));
                 }
-
                 return token;
             })
         );
@@ -79,13 +82,14 @@ export class AuthentificationService {
                 catchError(() => of(undefined)),
                 tap(() => {
                     localStorage.removeItem('currentUser');
-                    localStorage.removeItem('userInfo');
-                    localStorage.removeItem('userFilter');
+                    localStorage.removeItem('token');
+                    void this.router.navigate(['login']);
                 })
             );
         } else {
             return EMPTY;
         }
+
     }
 
     // public getLogin(): string | undefined {
@@ -104,7 +108,7 @@ export class AuthentificationService {
     }
 
     // check if user is authenticated and authorized to perform action
-    // public isAuthorized(authorizedRoles: string[]): boolean {
+    // public isAuthorized(): boolean {
     //     const userInfoAsString = localStorage.getItem('userInfo');
     //     const userInfo = userInfoAsString ? JSON.parse(userInfoAsString) as UserInfo : undefined;
     //     if (!userInfo) {
